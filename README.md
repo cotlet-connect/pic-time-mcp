@@ -143,7 +143,6 @@ Your AI downloads each gallery your login can open into its own folder.
 - [Pic-Time MCP server on Cotlet.dev](https://cotlet.dev/integrations/pic-time-api-mcp-server?utm_source=github&utm_medium=readme&utm_campaign=pic-time&utm_content=find)
 - [Pic-Time API with Cotlet](https://cotlet.dev/integrations/api/pic-time?utm_source=github&utm_medium=readme&utm_campaign=pic-time&utm_content=find)
 - [Does Pic-Time have an API or MCP server?](https://cotlet.dev/api-mcp-status/pic-time?utm_source=github&utm_medium=readme&utm_campaign=pic-time&utm_content=find)
-- [PyPI package pic-time-mcp](https://pypi.org/project/pic-time-mcp/)
 
 ## More photography apps on Cotlet
 
