@@ -109,6 +109,194 @@ python3 pic_time_agent.py tools     # list Cotlet.dev tools
 python3 pic_time_agent.py serve     # start the stdio MCP server (same as no argument)
 ```
 
+## What you can ask your AI to do in Pic-Time
+
+These are real jobs Pic-Time users asked about. Cotlet lets ChatGPT, Claude or any MCP client do them in your own signed-in Pic-Time account.
+
+### CRM and booking links
+
+#### How do I connect Pic-Time to HoneyBook so a gallery is created when a client books and I can pull images back into the client file?
+
+Partly. Pic-Time's help centre lists a HoneyBook integration. With Cotlet, your agent reads new booked clients in HoneyBook and creates the gallery in Pic-Time, both signed in in your Cloud Browser. Nothing is created until you say yes.
+
+Ask your agent: "Take the clients who booked in HoneyBook this week and create a Pic-Time gallery for each with the client name. Show me the list first."
+
+As an API endpoint: Yes. Save the booking-to-gallery step as an endpoint in Cotlet and call it from n8n, Make or Zapier whenever HoneyBook has a new booked client.
+
+#### How do I connect Pic-Time to Studio Ninja so galleries link to each job and Pic-Time print orders land in my income records?
+
+Partly. Pic-Time's help centre has a Studio Ninja page, and Studio Ninja says it copies Pic-Time orders to Xero or QuickBooks. With Cotlet, your agent lists Pic-Time orders missing from your income records and adds them. Nothing is added until you say yes.
+
+Ask your agent: "List this month's Pic-Time print orders that are not in my Studio Ninja income records and show client, date and total."
+
+As an API endpoint: Yes. Save the missing-orders check as an endpoint in Cotlet and call it every Monday from n8n, Make or Zapier.
+
+#### Can I connect Dubsado to Pic-Time so a gallery is created when a contract is signed?
+
+Yes. Pic-Time has no Dubsado page, only its Zapier app with a Create Gallery action. With Cotlet, your agent reads newly signed contracts in Dubsado and creates the gallery in Pic-Time, both signed in in your Cloud Browser. Nothing is created until you say yes.
+
+Ask your agent: "List Dubsado contracts signed this week and create a Pic-Time gallery for each client. Show me the list before you create anything."
+
+As an API endpoint: Yes. Save the contract-to-gallery step as an endpoint in Cotlet and call it from n8n, Make or Zapier when Dubsado reports a signed contract.
+
+#### How do I get a Pic-Time gallery created from a booking calendar (Calendly or Google Calendar) without a CRM?
+
+Yes. Pic-Time's Zapier app can create a gallery. With Cotlet, your agent reads new bookings in Calendly or Google Calendar and creates a Pic-Time gallery for each, signed in in the same Cloud Browser. Nothing is created until you say yes.
+
+Ask your agent: "Read this week's new Google Calendar bookings tagged shoot and create a Pic-Time gallery for each client. Show me the list first."
+
+As an API endpoint: Yes. Save the booking read as an endpoint in Cotlet and call it every morning from n8n, Make or Zapier to create the day's galleries.
+
+### Orders and accounting
+
+#### How do I connect Pic-Time to Zapier so every new print order is added to a Google Sheet?
+
+Yes. Pic-Time's Zapier app has a New Order Placed trigger. With Cotlet, your agent can also read the Orders screen and add each order as a row in your Google Sheet, without building a Zap. Nothing is added until you say yes.
+
+Ask your agent: "Add this month's Pic-Time orders to my Google Sheet, one row each with client, date, items and total."
+
+As an API endpoint: Yes. Save the order read as an endpoint in Cotlet and call it daily from n8n, Make or Zapier to add new orders to the sheet.
+
+#### How do I get Pic-Time orders into QuickBooks or Xero without typing each one by hand?
+
+Yes. Pic-Time lets you download orders as CSV, but has no QuickBooks or Xero link of its own. With Cotlet, your agent reads the month's orders and enters them in QuickBooks or Xero, signed in in the same Cloud Browser. Nothing is entered until you say yes.
+
+Ask your agent: "Read this month's Pic-Time orders and enter each as a sales record in QuickBooks with date, client and total. Show me the list first."
+
+As an API endpoint: Yes. Save the order read as an endpoint in Cotlet that returns JSON, and pass it to your accounting tool from n8n or Make each month.
+
+#### How do I export all my Pic-Time orders and client emails into a spreadsheet every month for my accountant?
+
+Yes. Pic-Time downloads orders as CSV and gallery visitor emails with Download List, one gallery at a time. With Cotlet, your agent gathers the month's orders and the visitor emails into one spreadsheet for your accountant.
+
+Ask your agent: "Put last month's Pic-Time orders and the visitor emails of each gallery into one spreadsheet with client, date, total and email."
+
+As an API endpoint: Yes. Save the monthly read as an endpoint in Cotlet and call it on the first of each month from n8n, Make or a script.
+
+#### Can AI look at my Pic-Time orders and tell me which sales automation actually earns money and which one to drop?
+
+Partly. Pic-Time sets up Sales Automations under Shop & Automations. With Cotlet, your agent reads the orders and the Sales Report for a period and sets them against each automation's dates. The agent says which orders it could match.
+
+Ask your agent: "Read my Pic-Time orders for the last 90 days and my sales automations, and show which automation brought which sales."
+
+As an API endpoint: Yes. Save the comparison as an endpoint in Cotlet and call it from n8n, Make or a script at the end of each quarter.
+
+#### Can AI work out my Pic-Time print markups from my lab costs, so I stop guessing 150% or 500%?
+
+Yes. Pic-Time downloads your price list from Shop & Automation and shows production costs in Billing History. With Cotlet, your agent reads both and works out the markup per product, then proposes a price. Nothing in your shop changes.
+
+Ask your agent: "Read my Pic-Time price list and my lab production costs and show the markup for each product with a suggested price at 3x cost."
+
+As an API endpoint: Yes. Save the markup table as an endpoint in Cotlet and call it from n8n, Make or a script whenever your lab changes prices.
+
+### Galleries and expiry
+
+#### Can ChatGPT or Claude list the Pic-Time galleries that expire this month and write a keep-your-gallery-online email for each client?
+
+Yes. Pic-Time has a Gallery Expiration Automation that sends its own reminders. With Cotlet, your agent lists the galleries that expire this month from Gallery Setup and drafts a personal email for each client. Nothing is sent until you say yes.
+
+Ask your agent: "List my Pic-Time galleries that expire this month with client and date, and draft a short keep-your-gallery-online email for each."
+
+As an API endpoint: Yes. Save the expiry list as an endpoint in Cotlet and call it on the first of each month from n8n, Make or Zapier.
+
+#### Can an AI agent check my migrated Pic-Time galleries for wrong download or expiry settings?
+
+Yes. With Cotlet, your agent opens each gallery's setup in your signed-in Pic-Time account and lists the ones whose download or expiry settings differ from what you tell it. Nothing is changed.
+
+Ask your agent: "Check every Pic-Time gallery migrated this year and list the ones where downloads are off or the expiry date is missing."
+
+As an API endpoint: Yes. Save the check as an endpoint in Cotlet and call it from n8n, Make or a script after each batch of migrated galleries.
+
+#### How do I create 30 Pic-Time galleries at once with the same settings, expiry and price list, from a list of client names?
+
+Yes. Pic-Time's Zapier app can create a gallery one at a time. With Cotlet, your agent creates each gallery from your list in your signed-in Pic-Time account and sets the same expiry and price list. Nothing is created until you say yes.
+
+Ask your agent: "Create a Pic-Time gallery for each client name in this list with the same expiry and price list as my last gallery. Show me the first three first."
+
+As an API endpoint: Yes. Save the gallery step as an endpoint in Cotlet that takes a client name, and call it for each row of a sheet from n8n or Make.
+
+#### How do I change expiry or download settings on all my old Pic-Time galleries in one go?
+
+Yes. With Cotlet, your agent opens each gallery you name in Pic-Time, sets the new expiry or download option and shows you the list first. Nothing changes until you say yes.
+
+Ask your agent: "Set downloads to on and the expiry to December 2027 for every Pic-Time gallery from 2023. Show me the list before you save."
+
+#### How do I automatically reopen an archived Pic-Time gallery for a past client and send them an invoice for the reopening fee?
+
+Partly. Pic-Time has an Unarchive step for older galleries. With Cotlet, your agent unarchives the gallery you name and drafts the invoice for your reopening fee in QuickBooks or your invoicing tool. Nothing changes or is sent until you say yes.
+
+Ask your agent: "Unarchive the Hartley wedding gallery in Pic-Time and draft a reopening fee invoice for Anna in QuickBooks. Show me both first."
+
+As an API endpoint: Yes. Save the reopen step as an endpoint in Cotlet that takes a gallery name, and call it from n8n, Make or Zapier when a client pays.
+
+#### How do I tag my Pic-Time galleries by venue, planner and photographer and search them later?
+
+Partly. Pic-Time's help centre shows no tag screen for galleries. With Cotlet, your agent reads each gallery's name and details and builds a searchable table of venue, planner and photographer in Google Sheets.
+
+Ask your agent: "List all my Pic-Time galleries and build a Google Sheet with columns for client, date, venue, planner and photographer from the gallery names."
+
+#### How do I download every gallery from Pic-Time to back it up before I leave?
+
+Partly. Pic-Time has no export-all screen, only a download for each gallery. With Cotlet, your agent goes through your galleries and starts each download in turn. Very large galleries may not fit, so try a few first.
+
+Ask your agent: "Download the Pic-Time galleries from 2024, one after another, and give me a list of which ones finished. Start with three."
+
+### Client emails and downloads
+
+#### How do I send my Pic-Time visitor emails to Mailchimp or another mailing list?
+
+Yes. Pic-Time's Zapier app has a New Gallery Visitor trigger, and each gallery's visitor emails download as CSV. With Cotlet, your agent reads the visitor emails and adds them to your Mailchimp audience, signed in in the same Cloud Browser. Nothing is added until you say yes.
+
+Ask your agent: "Take the visitor emails of my last five Pic-Time galleries and add them to my Mailchimp audience. Show me the list first."
+
+As an API endpoint: Yes. Save the visitor read as an endpoint in Cotlet and call it weekly from n8n, Make or Zapier to update your mailing list.
+
+#### Can AI write my Pic-Time gallery invitation and reminder emails and schedule them without sending the wrong one to the wrong person?
+
+Yes. Pic-Time lets you schedule when emails are sent. With Cotlet, your agent writes each invitation or reminder, matches it to the right client and gallery and shows you the pairs. Nothing is scheduled or sent until you say yes.
+
+Ask your agent: "Write the invitation email for each Pic-Time gallery ready this week and show me a table of gallery, client and email before anything is scheduled."
+
+As an API endpoint: Yes. Save the gallery and client pairing as an endpoint in Cotlet and call it from n8n, Make or Zapier when a gallery is ready.
+
+#### Can AI answer my clients' questions about downloading Pic-Time photos to their phone or Google Photos?
+
+Partly. Pic-Time has help pages on client downloads and on saving to Google Photos. With Cotlet, your agent reads the client's email in your inbox and drafts a reply with those steps for that gallery. Nothing is sent until you say yes.
+
+Ask your agent: "Read the latest client email about downloading photos and draft a reply with the steps to save the gallery to a phone or Google Photos."
+
+### Lightroom and selections
+
+#### How do I make Lightroom, Imagen and Pic-Time work as one flow, from cull to published gallery and client selections back in my catalog?
+
+Partly. The Lightroom Classic plug-in and Imagen run on your computer, which Cotlet cannot control. With Cotlet, your agent works in Pic-Time's web screens and reads which galleries are published and what clients selected, so you see where each job stands.
+
+Ask your agent: "List my Pic-Time galleries from this month with whether they are published and how many photos each client has selected."
+
+As an API endpoint: Yes. Save the status list as an endpoint in Cotlet and call it every evening from n8n, Make or a script.
+
+#### Can AI pick highlight photos and sort a Pic-Time gallery into scenes, and keep that order when I republish from Lightroom?
+
+Partly. Pic-Time has its own AI Photo Filter and AI search for clients. With Cotlet, your agent can arrange a gallery's photos by the scenes you name. Choosing the best shots by eye is your call, and a Lightroom republish happens on your computer. Nothing changes until you say yes.
+
+Ask your agent: "Sort the Hartley wedding gallery in Pic-Time into the scenes Getting ready, Ceremony and Reception from the photo times. Show me the plan first."
+
+#### How do I send my clients' Pic-Time favourites and selections straight into Lightroom as a list?
+
+Yes. Pic-Time's Lightroom plug-in update of October 2026 syncs selections as CSV. With Cotlet, your agent can also read a client's favourites in the gallery and give you the file names as a list for a Lightroom collection.
+
+Ask your agent: "List the file names of the photos the Hartleys marked as favourites in their Pic-Time gallery, one per line."
+
+As an API endpoint: Yes. Save the favourites read as an endpoint in Cotlet that takes a client name and returns file names, and call it from n8n or a script.
+
+### Website and portfolio
+
+#### How do I put my Pic-Time galleries and portfolio on my own WordPress or Squarespace site without a slow embed?
+
+Partly. Pic-Time has a Portfolio Page embed and a Pic-Time Connect WordPress plugin. With Cotlet, your agent reads your public galleries in Pic-Time and adds the pages or links in your WordPress or Squarespace admin. Page speed is set by the embed. Nothing is published until you say yes.
+
+Ask your agent: "List my public Pic-Time galleries and add a link page for each to my WordPress site as a draft. Show me the list first."
+
 ## Questions from Pic-Time photographers
 **Does Pic-Time have an API?**
 
